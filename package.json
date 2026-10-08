@@ -1,0 +1,53 @@
+{
+  "name": "picgo-plugin-neon",
+  "version": "1.0.0",
+  "description": "PicGo uploader for Neon Object Storage, S3-compatible storage that branches with your Neon Postgres database",
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "logo.png"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "tsc && vitest run",
+    "prepublishOnly": "pnpm build && pnpm test",
+    "test:live": "tsc && dotenvx run -f .env.test -- vitest run test/live.test.ts"
+  },
+  "keywords": [
+    "picgo",
+    "picgo-plugin",
+    "picgo-gui-plugin",
+    "neon",
+    "object-storage",
+    "s3",
+    "uploader"
+  ],
+  "author": "Rishi Raj Jain <jain71000@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/rishi-raj-jain/picgo-plugin-neon#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rishi-raj-jain/picgo-plugin-neon.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rishi-raj-jain/picgo-plugin-neon/issues"
+  },
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "packageManager": "pnpm@10.33.0",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.1146.0",
+    "hpagent": "^1.2.0",
+    "mime-types": "^3.0.2"
+  },
+  "devDependencies": {
+    "@dotenvx/dotenvx": "^2.33.0",
+    "@types/mime-types": "^3.0.1",
+    "@types/node": "^26.6.4",
+    "picgo": "^3.1.0",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.3"
+  }
+}
